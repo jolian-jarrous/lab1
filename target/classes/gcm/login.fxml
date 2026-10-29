@@ -7,28 +7,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 
-<!-- A vertical box that lays out the login elements, centered. -->
-<!-- fx:controller connects this screen to the LoginController class. -->
-<VBox alignment="CENTER" spacing="12.0"
+<!-- fx:controller connects this screen to LoginController. -->
+<VBox alignment="CENTER" spacing="16.0" prefWidth="340.0" prefHeight="300.0"
+      style="-fx-background-color: #f4f6f8;"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="gcm.LoginController">
 
     <padding>
-        <Insets top="30.0" right="40.0" bottom="30.0" left="40.0"/>
+        <Insets top="30.0" right="35.0" bottom="30.0" left="35.0"/>
     </padding>
 
-    <Label text="GCM System Login" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label text="Login"
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
 
-    <Label text="Username:"/>
-    <TextField fx:id="usernameField" promptText="Enter username"/>
+    <!-- Username label sits above its field -->
+    <VBox spacing="4.0" alignment="CENTER_LEFT" maxWidth="260.0">
+        <Label text="Username:" style="-fx-text-fill: #34495e;"/>
+        <TextField fx:id="usernameField" promptText="Enter username"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #cfd8dc; -fx-padding: 7;"/>
+    </VBox>
 
-    <Label text="Password:"/>
-    <PasswordField fx:id="passwordField" promptText="Enter password"/>
+    <!-- Password label sits above its field -->
+    <VBox spacing="4.0" alignment="CENTER_LEFT" maxWidth="260.0">
+        <Label text="Password:" style="-fx-text-fill: #34495e;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #cfd8dc; -fx-padding: 7;"/>
+    </VBox>
 
-    <!-- onAction links this button to the handleLogin() method in the controller. -->
-    <Button text="Login" onAction="#handleLogin"/>
+    <!-- Empty until a login fails, then shows the error in red. -->
+    <Label fx:id="messageLabel" style="-fx-text-fill: #e74c3c;"/>
 
-    <!-- The error message appears here, in red, when login fails. -->
-    <Label fx:id="messageLabel" style="-fx-text-fill: red;"/>
+    <!-- onAction calls handleLogin() in the controller. -->
+    <Button text="Login" onAction="#handleLogin" prefWidth="260.0"
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8; -fx-cursor: hand;"/>
 </VBox>

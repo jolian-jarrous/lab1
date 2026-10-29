@@ -4,17 +4,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 
-<!-- The Welcome screen: just a greeting label, centered. -->
-<VBox alignment="CENTER" spacing="12.0"
+<VBox alignment="CENTER" spacing="12.0" prefWidth="320.0" prefHeight="150.0"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="gcm.WelcomeController">
 
     <padding>
-        <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
+        <Insets top="30.0" right="30.0" bottom="30.0" left="30.0"/>
     </padding>
 
-    <!-- The text is replaced at runtime with "Welcome, <username>!" -->
-    <Label fx:id="welcomeLabel" text="Welcome!"
-           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <!-- Text is replaced at runtime with "Welcome, <username>!" -->
+    <Label fx:id="welcomeLabel" text="Welcome!" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 </VBox>
