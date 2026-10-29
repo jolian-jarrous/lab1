@@ -43,7 +43,7 @@ public class UsersApp {
             } catch (IllegalArgumentException e) {
                 // ERRORS print to the console.
                 System.err.println(line + "  ->  " + e.getMessage());
-            }
+            }mvn clean javafx:run
         }
 
         scanner.close();
